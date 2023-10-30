@@ -29,6 +29,7 @@ const material = new THREE.RawShaderMaterial({
   fragmentShader: fragmentShader,
   transparent: true,
   side: THREE.DoubleSide,
+  uniforms: { uTime: { value: 0.0 } },
 });
 
 const mesh = new THREE.Mesh(geometry, material);
@@ -66,7 +67,9 @@ window.addEventListener("resize", () => {
 const clock = new THREE.Clock();
 
 const animate = () => {
-  const elapesedTime = clock.getElapsedTime();
+  const elapsedTime = clock.getElapsedTime();
+
+  material.uniforms.uTime.value = elapsedTime;
 
   controls.update();
   renderer.render(scene, camera);
