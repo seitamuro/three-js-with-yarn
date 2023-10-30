@@ -11,10 +11,25 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jpg|gif|svg|ttf|woff|woff2|eot)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(glsl|vs|fs|vert|frag)$/,
+        type: "asset/source",
+        generator: {
+          filename: "assets/images/[hash][ext]",
+        },
+      },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".vert", ".frag"],
   },
   output: {
     filename: "bundle.js",

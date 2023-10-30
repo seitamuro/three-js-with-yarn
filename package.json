@@ -1,6 +1,9 @@
 {
   "name": "three-js-with-yarn",
   "packageManager": "yarn@3.6.1",
+  "scripts": {
+    "start": "webpack serve --mode development"
+  },
   "devDependencies": {
     "@types/three": "^0.158.0",
     "html-webpack-plugin": "^5.5.3",
