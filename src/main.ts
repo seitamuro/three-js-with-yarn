@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import vertexShader from "./shader/vertexShader.vert";
 import fragmentShader from "./shader/fragmentShader.frag";
+import "./style.css";
 
 /**
  * Setup Scene , Camera and etc
